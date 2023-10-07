@@ -7,6 +7,7 @@ from service.audio_processor import AudioProcessor
 
 
 def start_process(args):
+    """start"""
     try:
         with tempfile.TemporaryDirectory() as temp_dir:
             video_path = os.path.join(temp_dir, args.video.filename)

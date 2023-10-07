@@ -13,6 +13,10 @@ BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BASE_PATH)
 CORS(app=app)
 
+@app.route("/")
+def welcome():
+    """welcome"""
+    return "hello world"
 
 @app.route("/process", methods=['POST'])
 def video_process_pipeline():

@@ -1,5 +1,5 @@
 import os
-
+import whisper
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 
 
@@ -17,3 +17,8 @@ class VideoProcessor:
             return output_audio_path
         else:
             return ''
+
+    def extract_text(self, model_type="base", resource_language="en") -> str:
+        model = whisper.load_model(model_type)
+        result = model.transcribe(self.video_path, language=resource_language)
+        return result['text']

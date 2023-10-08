@@ -2,11 +2,12 @@ import logging
 import os
 import tempfile
 from flask import jsonify
+from model.video_translate_param import VideoTranslateParam
 from service.video_processor import VideoProcessor
 from service.audio_processor import AudioProcessor
 
 
-def start_process(args):
+def start_process(param: VideoTranslateParam):
     """start"""
     try:
         with tempfile.TemporaryDirectory() as temp_dir:

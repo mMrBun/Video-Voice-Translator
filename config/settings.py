@@ -1,9 +1,8 @@
 import os
 import sys
-
-SPEECH_TO_TEXT_MODEL_PATH = os.path.join(sys.path[0],"models","s2t-small-librispeech-asr")
-
-project_config={
+# if you don't have local model please download model first, or use Helsinki-NLP/opus-mt-en-zh instead
+EN_TO_ZH_MODEL_PATH = os.path.join(sys.path[0], "models", "opus-mt-en-zh")
+project_config = {
     # launch mode
-    'launch':'cli'
+    'launch': 'cli'
 }

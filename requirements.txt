@@ -1,4 +1,8 @@
 flask~=2.3.3
-flask_cors
 flask-restful
-moviepy
+flask-cors
+moviepy~=1.0.3
+openai~=0.28.1
+werkzeug~=2.3.7
+openai-whisper
+transformers

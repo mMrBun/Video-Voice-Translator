@@ -14,8 +14,8 @@ from modelscope.utils.audio.audio_utils import TtsTrainType
 
 pretrained_model_id = 'damo/speech_personal_sambert-hifigan_nsf_tts_zh-cn_pretrain_16k'
 
-dataset_id = "output_training_data/"
-pretrain_work_dir = "pretrain_work_dir/"
+dataset_id = "workspace_train/output_training_data/"
+pretrain_work_dir = "workspace_train/pretrain_work_dir/"
 
 whisper_size = "base"
 whisper_model = whisper.load_model(whisper_size)
@@ -23,8 +23,8 @@ whisper_model = whisper.load_model(whisper_size)
 def auto_label(audio):
     try:
         split_long_audio(whisper_model, audio, "test_wavs")
-        input_wav = "test_wavs/"
-        output_data = "output_training_data/"
+        input_wav = "workspace_train/test_wavs/"
+        output_data = "workspace_train/output_training_data/"
         ret, report = run_auto_label(input_wav=input_wav, work_dir=output_data, resource_revision="v1.0.7")
         print(ret,report)
     except Exception:
@@ -66,7 +66,7 @@ import random
 
 def infer(text):
 
-  model_dir = "/pretrain_work_dir"
+  model_dir = "workspace_train/pretrain_work_dir"
 
   custom_infer_abs = {
       'voice_name':

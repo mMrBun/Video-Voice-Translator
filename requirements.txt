@@ -6,3 +6,6 @@ openai~=0.28.1
 werkzeug~=2.3.7
 openai-whisper
 transformers
+gTTs~=2.4.0
+modelscope~=1.9.2
+librosa~=0.10.1
